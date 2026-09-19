@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TourGen | Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="admin.js"></script>
+</head>
+<body>
+
+    <nav id="sidebar">
+        <ul class="nav flex-column gap-2">
+            <li><a onclick="showSection('dashboard', this)" class="nav-link active"><i class="bi bi-grid-1x2-fill me-2"></i> Analytics</a></li>
+            <li><a onclick="showSection('bookings', this)" class="nav-link"><i class="bi bi-person-badge-fill me-2"></i> User Bookings</a></li>
+            <li><hr class="text-secondary mx-3"></li>
+            <li><a href="home.html" class="nav-link"><i class="bi bi-box-arrow-up-right me-2"></i> Live Website</a></li>
+        </ul>
+    </nav>
+
+    <div id="main-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand fw-bold"><i>TourGen</i> Admin</a>
+            </div>
+        </nav>
+
+        <div id="dashboard" class="section-content active">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-bold">Inventory & Stats</h3>
+                <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#addTourModal">
+                    <i class="bi bi-plus-lg me-2"></i>Add Package
+                </button>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="card p-4">
+                        <small class="text-muted fw-bold">TOTAL PACKAGES</small>
+                        <h2 class="fw-bold mt-1" id="stat-tours">0</h2>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-4">
+                        <small class="text-muted fw-bold">CONFIRMED BOOKINGS</small>
+                        <h2 class="fw-bold mt-1 text-primary" id="stat-bookings">0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0">
+                <div class="p-3 border-bottom"><h5 class="mb-0 fw-bold">Active Tour Packages</h5></div>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead class="bg-light text-muted">
+                            <tr><th class="ps-4">Image</th><th>Tour Name</th><th>Base Price</th><th class="text-end pe-4">Action</th></tr>
+                        </thead>
+                        <tbody id="tourTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="bookings" class="section-content">
+            <h3 class="fw-bold mb-4">Customer Orders</h3>
+            <div class="card border-0">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="ps-4 py-3">Customer Profile</th>
+                                <th class="py-3">Destination</th>
+                                <th class="py-3">Guests</th>
+                                <th class="py-3">Total Fare</th>
+                                <th class="text-end pe-4 py-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-dark text-light pt-4 mt-5" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">TourGen</h5>
+                    <p class="small">
+                        We provide budget-friendly and customized tour packages across India
+                        with complete trip planning and support.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="home.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="home.html#tour" class="text-light text-decoration-none">Tours</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">MyTour</a></li>
+                        <li><a href="home.html#footer" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p class="small mb-1">India</p>
+                    <p class="small mb-1">+91 9898******</p>
+                    <p class="small">vrajpatel989828@gmail.com</p>
+                    <div class="row container" style="width:50%;">
+                        <div class="col-3"><a
+                                href="https://www.instagram.com/vraj_patel_07?igsh=MThwOXM2eWdsOW9iZw=="><i
+                                    class="bi bi-instagram"></i></a></div>
+                        <div class="col-3"><a href="https://youtube.com/@vrajpatel.18?si=TrdGWkk-9aveX9Vp"><i
+                                    class="bi bi-youtube"></i></a></div>
+                        <div class="col-3"><a href="#"><i class="bi bi-github"></i></a></div>
+                        <div class="col-3"><a href="tel:9898284196"><i class="bi bi-phone"></i></a></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+            <div class="text-center pb-3">
+                <p class="mb-0 small">
+                    © 2026 TourGen. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    </div>
+    
+
+    <div class="modal fade" id="addTourModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg p-3" style="border-radius: 20px;">
+                <form id="tourForm">
+                    <h5 class="fw-bold mb-4">New Tour Details</h5>
+                    <input type="text" id="name" class="form-control mb-3" placeholder="Destination Name" required>
+                    <input type="text" id="img" class="form-control mb-3" placeholder="Image URL" required>
+                    <textarea id="desc" class="form-control mb-3" placeholder="Brief Description" required></textarea>
+                    <div class="row g-2 mb-3">
+                        <div class="col-6"><input type="text" id="price" class="form-control" placeholder="Price (Ex: 5000)"></div>
+                        <div class="col-6"><input type="text" id="dur" class="form-control" placeholder="Ex: 4 Days"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-bold shadow">Publish Tour</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

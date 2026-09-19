@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+  <script src="login.js" defer></script>
+</head>
+<body>
+<h2 id="logo">TourGen</h2>
+  <div class="login-container">
+    <h2>Welcome Back</h2>
+    <p>Login to your account</p>
+
+    <form id="loginForm">
+      <div class="input-group">
+        <i class="bi bi-person"></i>
+        <input type="text" id="email" placeholder="Username or Email" required>
+      </div>
+
+      <div class="input-group">
+        <i class="bi bi-lock"></i>
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+
+      <div class="options">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#" id="forgotPassword">Forgot Password?</a>
+      </div>
+
+      <button class="login-btn" type="submit" >Login</button>
+
+      <div class="register-link">
+        Don’t have an account? <a href="signup.html">Create Account</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

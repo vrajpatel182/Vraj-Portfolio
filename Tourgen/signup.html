@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="signup.css">
+  <script src="signup.js" defer></script>
+</head>
+<body>
+  <h2 id="logo">TourGen</h2>
+  <div class="signup-container">
+    <h2>Create Account</h2>
+    <p>Register your account</p>
+
+    <form id="signupForm">
+      <div class="input-group">
+        <i class="bi bi-person"></i>
+        <input type="text" id="name" placeholder="Full Name" required>
+      </div>
+
+      <div class="input-group">
+        <i class="bi bi-envelope"></i>
+        <input type="email" id="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="input-group">
+        <i class="bi bi-phone"></i>
+        <input type="text" placeholder="Mobile Number" required>
+      </div>
+
+      <div class="input-group">
+        <i class="bi bi-people"></i>
+        <select id="role" required>
+          <option value="">Select Role</option>
+          <option value="customer">Customer</option>
+          <option value="organizer">Organizer</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <i class="bi bi-lock"></i>
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+
+      <div class="input-group">
+        <i class="bi bi-lock-fill"></i>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      </div>
+
+      <button class="signup-btn" type="submit">Create Account</button>
+
+      <div class="login-link">
+        Already have an account? <a href="login.html">Login</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
